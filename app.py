@@ -21,7 +21,7 @@ app = Dash(__name__)
 server = app.server
 
 app.layout = html.Div([
-    html.H2("Dash — Demography (extended minimal-app)", style={'textAlign':'center'}),
+    html.H2("Dash — Demography", style={'textAlign':'center'}),
     html.Hr(),
 
     html.Div([
@@ -145,4 +145,5 @@ def update_pie(year_value):
 
 if __name__ == '__main__':
     app.run_server(debug=True, port=8050)
+
 
