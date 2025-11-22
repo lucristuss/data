@@ -136,7 +136,7 @@ def update_pie(year_value):
         dff = dff[dff['year'] == year_value]
     if 'pop' not in dff.columns or 'continent' not in dff.columns:
         return px.pie(title='Not enough data for pie chart')
-    cont = dff.groupby('continent', as_index=False')['pop'].sum()
+    cont = dff.groupby('continent', as_index=False)['pop'].sum()
     fig = px.pie(cont, names='continent', values='pop', title=f'Population by continent — {year_value}')
     fig.update_traces(textposition='inside', textinfo='percent+label')
     fig.update_layout(height=300)
@@ -145,3 +145,4 @@ def update_pie(year_value):
 
 if __name__ == '__main__':
     app.run_server(debug=True, port=8050)
+
